@@ -1,0 +1,124 @@
+/* =====================================================================
+   EcoGestor Local - Estilos propios (complementan Bootstrap 5)
+   Todo es local: sin fuentes ni CDN externas (funciona offline).
+   ===================================================================== */
+
+:root {
+    --ecogestor-azul: #0d6efd;
+    --ecogestor-borde: #dee2e6;
+}
+
+body {
+    background-color: #f4f6f9;
+    font-size: 14px;
+}
+
+/* ------------------------------------------------------------------
+   Barra de macros (botones rapidos bajo cada campo clinico)
+   ------------------------------------------------------------------ */
+.macros-barra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.macros-barra .btn {
+    --bs-btn-font-size: .72rem;
+    --bs-btn-padding-y: .15rem;
+    --bs-btn-padding-x: .45rem;
+    --bs-btn-border-radius: .3rem;
+}
+
+.macros-barra .btn-empty {
+    opacity: .5;
+    font-style: italic;
+}
+
+/* ------------------------------------------------------------------
+   Vista previa del texto ABIS
+   ------------------------------------------------------------------ */
+.preview-abis {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: .375rem;
+    padding: .75rem;
+    font-size: .78rem;
+    max-height: 320px;
+    overflow: auto;
+    white-space: pre-wrap;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+/* ------------------------------------------------------------------
+   Cabecera sticky con los botones de centro
+   ------------------------------------------------------------------ */
+.btn-centro.activo {
+    background-color: #fff;
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+/* ------------------------------------------------------------------
+   Formulario bloqueado (sin centro elegido)
+   ------------------------------------------------------------------ */
+#appContent.bloqueado {
+    filter: blur(1.5px);
+    pointer-events: none;
+    user-select: none;
+    opacity: .55;
+}
+
+/* ------------------------------------------------------------------
+   Marcador visual de campos obligatorios pendientes
+   ------------------------------------------------------------------ */
+.campo-pendiente {
+    border-color: #fd7e14 !important;
+    box-shadow: 0 0 0 .15rem rgba(253, 126, 20, .15) !important;
+}
+
+/* ------------------------------------------------------------------
+   Historial de la paciente
+   ------------------------------------------------------------------ */
+.hist-item {
+    border-left: 3px solid var(--ecogestor-azul);
+    padding: .35rem .5rem;
+    margin-bottom: .35rem;
+    background: #f8f9fa;
+    border-radius: 0 .25rem .25rem 0;
+    font-size: .78rem;
+}
+
+.hist-item small {
+    color: #6c757d;
+}
+
+/* ------------------------------------------------------------------
+   Tabla del reporte mensual
+   ------------------------------------------------------------------ */
+.tabla-reporte th {
+    background: #f1f3f5;
+    font-size: .78rem;
+    text-transform: uppercase;
+}
+
+.tabla-reporte td {
+    font-size: .82rem;
+}
+
+.kpi {
+    border-left: 4px solid var(--ecogestor-azul);
+}
+
+.kpi.doppler { border-left-color: #198754; }
+.kpi.nodoppler { border-left-color: #6c757d; }
+.kpi.total { border-left-color: #dc3545; }
+
+/* ------------------------------------------------------------------
+   Impresion (por si se imprime el formulario)
+   ------------------------------------------------------------------ */
+@media print {
+    .navbar, #modalReportes, #modalMacros, #modalConfirmacion,
+    .macros-barra, #btnGenerar, #btnLimpiar, .btn { display: none !important; }
+    body { background: #fff; }
+}

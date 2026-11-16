@@ -1,0 +1,8 @@
+# EcoGestor Local - dependencias
+# Todo funciona offline: solo librerias puras de Python (sin CDN, sin red).
+
+Flask==3.0.3
+Werkzeug==3.0.3
+Jinja2==3.1.4
+python-docx==1.1.2
+openpyxl==3.1.5

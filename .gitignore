@@ -1,0 +1,14 @@
+# Datos locales y artefactos de ejecucion (no versionar)
+database.db
+.secret_key
+__pycache__/
+*.py[cod]
+
+# Informes generados por paciente
+outputs/*.docx
+
+# Entornos virtuales / sistema
+.venv/
+venv/
+Thumbs.db
+desktop.ini
